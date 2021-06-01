@@ -20,6 +20,12 @@
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
     <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js"
+      integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    ></script>
     <title>JOSEPH RINIL SOZA</title>
   </head>
 
@@ -474,6 +480,20 @@
   </body>
 
   <script>
+    var exp = "";
+    var currentDate = moment(new Date()).format("DD/MM/YYYY");
+    currentDate = currentDate.split("/");
+    var joining = moment([2018, 11, 05]);
+    var current = moment([currentDate[2], currentDate[1], currentDate[0]]);
+    var years = current.diff(joining, "year");
+    joining.add(years, "years");
+    var months = current.diff(joining, "months");
+    joining.add(months, "months");
+    exp = years + "." + months;
+    var i = 0;
+    var txt = "FULL STACK DEVELOPER HAVING " + exp + "+ YEARS OF EXPERIENCE";
+    var speed = 75;
+
     $(document).ready(function () {
       var windowHeight = window.innerHeight;
       $(".left-part").css("min-height", windowHeight + "px");
@@ -495,10 +515,6 @@
         adjustWebChanges();
       }
     });
-
-    var i = 0;
-    var txt = "FULL STACK DEVELOPER HAVING 2.7+ YEARS OF EXPERIENCE";
-    var speed = 75;
 
     typeWriter = () => {
       if (i < txt.length) {
