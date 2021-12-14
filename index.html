@@ -513,13 +513,17 @@
 
   <script>
     var exp = "";
-    var currentDate = moment(new Date()).format("DD/MM/YYYY");
-    currentDate = currentDate.split("/");
-    var joining = moment([2018, 11, 05]);
-    var current = moment([currentDate[2], currentDate[1], currentDate[0]]);
-    var years = current.diff(joining, "year");
+    var currentDate = moment(new Date());
+    //currentDate = currentDate.split("/");
+    var joining = moment([2018, 11 - 1, 05]);
+    // var current = moment([
+    //   parseInt(currentDate[2]),
+    //   parseInt(currentDate[1]),
+    //   parseInt(currentDate[0]),
+    // ]);
+    var years = currentDate.diff(joining, "year");
     joining.add(years, "years");
-    var months = current.diff(joining, "months");
+    var months = currentDate.diff(joining, "months");
     joining.add(months, "months");
     exp = years + "." + months;
     var i = 0;
