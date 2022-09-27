@@ -164,6 +164,8 @@ body{
 			#right-main-one{
 				color:#ffffff;
 				font-size: 3vh;
+				// mix-blend-mode: overlay;
+				// font-weight: 600;
 
 			}
 			#resume-btn{
@@ -227,6 +229,15 @@ body{
 
 		.work-experience, .knowledge-areas {
 			min-height: 300px;
+		}
+
+		.knowledge-areas {
+			img {
+				transition: .5s ease-in-out;
+			}
+			img:hover{
+				transform: scale(1.1) rotate(3deg);
+			}
 		}
 		.header{
 			color:#fafafa;
